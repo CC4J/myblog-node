@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "supervisor index",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "NODE_ENV=production pm2 start index.js --name 'myblog'"
+    "start": "pm2 start index.js --name 'myblog'"
   },
   "keywords": [],
   "author": "",
