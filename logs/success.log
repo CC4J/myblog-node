@@ -1,0 +1,3 @@
+::1 - GET / HTTP/1.1 302 56 - 9.751 ms
+::1 - GET /posts HTTP/1.1 200 3791 - 1108.455 ms
+::1 - GET /posts/xxx/id HTTP/1.1 404 232 - 2.286 ms
