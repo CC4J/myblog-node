@@ -32,6 +32,9 @@ router.post('/create', checkLogin, function (req, res, next) {
     if (!content.length) {
       throw new Error('请填写内容')
     }
+    if (content.indexOf('<script>') < 0 || content.indexOf('</script>') < 0) {
+      throw new Error('包含非法脚本')
+    }
   } catch (e) {
     req.flash('error', e.message)
     return res.redirect('back')
@@ -117,6 +120,9 @@ router.post('/:postId/edit', checkLogin, function (req, res, next) {
     }
     if (!content.length) {
       throw new Error('请填写内容')
+    }
+    if (content.indexOf('<script>') < 0 || content.indexOf('</script>') < 0) {
+      throw new Error('包含非法脚本')
     }
   } catch (e) {
     req.flash('error', e.message)
